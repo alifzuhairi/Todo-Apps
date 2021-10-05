@@ -14,12 +14,13 @@ function TodoForm(props) {
         setInput(e.target.value);
     };
 
-           const handleSubmit = e => {
-           e.preventDefault();
+        //function to handle the todo submission
+        const handleSubmit = e => {
+        e.preventDefault();
         props.onSubmit({
         id: Math.floor(Math.random() * 10000),
         text: input
-    });
+          });
 
     setInput('');
 

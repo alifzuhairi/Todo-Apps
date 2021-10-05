@@ -6,6 +6,8 @@ function TodoList() {
 
     const [todos, setTodos] = useState([]);
 
+
+    //create a function to add todo 
     const addTodo = todo => {
         if(!todo.text || /^\s*$/.test(todo.text)){
             return
@@ -16,12 +18,14 @@ function TodoList() {
         setTodos(newTodos);
     };
 
+    //create a function to remove todo
     const removeTodo = id => {
         const removeArr = [...todos].filter(todo =>todo.id !== id);
 
         setTodos(removeArr);
     };
 
+    //create a function to update todo
     const updateTodo = (todoId, newValue) => {
         if(!newValue.text || /^\s*$/.test(newValue.text)){
             return;
@@ -30,6 +34,7 @@ function TodoList() {
         );
     };
 
+    //function to check either the todo is complete or not
     const completeTodo = id => {
     let updatedTodos = todos.map(todo => {
         if (todo.id === id) {
@@ -40,6 +45,8 @@ function TodoList() {
     setTodos(updatedTodos);
     };
 
+
+    //things that will be rendered
     return (
         <div>
             <h1>Do This !</h1>
